@@ -1,5 +1,4 @@
-class UserController < ApplicationController
-
+class UsersController < ApplicationController
   def show
     current_user = User.find(session[:user_id])
     render json: current_user
@@ -19,5 +18,4 @@ class UserController < ApplicationController
   def user_params
     params.permit(:username, :password, :password_confirmation)
   end 
-  
 end
