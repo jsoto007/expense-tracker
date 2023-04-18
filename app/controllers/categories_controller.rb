@@ -1,5 +1,4 @@
-class CategoryController < ApplicationController
-
+class CategoriesController < ApplicationController
 
   def show
     categories = Category.all
