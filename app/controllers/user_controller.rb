@@ -1,5 +1,10 @@
 class UserController < ApplicationController
 
+  def show
+    current_user = User.find(session[:user_id])
+    render json: current_user
+  end 
+
   def create
     user = User.create(user_params)
     if user.valid?
