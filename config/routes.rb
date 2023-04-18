@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     get "/auth", to: "users#show"
 
     get "/categories", to: "categories#show"
+    get "/expenses", to: "expenses#show"
 end
