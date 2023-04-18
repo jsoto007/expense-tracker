@@ -40,6 +40,15 @@ const [loginData, setLoginData] = useState({
           onChange={handleChange}
           placeholder="Username"
         />
+        <input
+          type="password"
+          name="password"
+          value={loginData.password}
+          id="password"
+          onChange={handleChange}
+          placeholder="Password"
+        />
+        <button type="submit">Log In</button>
       </form>
 
     </div>
