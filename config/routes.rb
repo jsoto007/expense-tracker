@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   get "/categories", to: "categories#show"
   get "/expenses", to: "expenses#show"
-  
+
 end
