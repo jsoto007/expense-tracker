@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 
-function Auth() {
+function Auth( { onLogin } ) {
+
+  const [newUser, setNewUser] = useState({
+    username: "", 
+    password: ""
+  })
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/users", {
+    fetch("/user", {
       method: "POST", 
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(loginData),
+      body: JSON.stringify(newUser),
     })
     .then((resp) => resp.json())
     .then((user) => onLogin(user));
@@ -18,8 +23,8 @@ function Auth() {
 
   function handleChange(e) {
     const key = e.target.id
-    setLoginData({
-      ...loginData, 
+    setNewUser({
+      ...newUser, 
       [key]: e.target.value
     })
   }
@@ -30,7 +35,7 @@ function Auth() {
         <input
           type="text"
           name="username"
-          value={loginData.username}
+          value={newUser.username}
           id="username"
           onChange={handleChange}
           placeholder="Username"
@@ -38,12 +43,12 @@ function Auth() {
         <input
           type="password"
           name="password"
-          value={loginData.password}
+          value={newUser.password}
           id="password"
           onChange={handleChange}
           placeholder="Password"
         />
-        <button type="submit">Log In</button>
+        <button type="submit">Create Account</button>
       </form>
     </div>
   )

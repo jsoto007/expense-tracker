@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/auth", to: "users#show"
 
+  delete "/logout", to: "sessions#destroy"
+
   get "/categories", to: "categories#show"
   get "/expenses", to: "expenses#show"
 

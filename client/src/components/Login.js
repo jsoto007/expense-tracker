@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 function Login( { onLogin } ) {
 const [loginData, setLoginData] = useState({
-  username: "", 
+  userName: "", 
   password: ""
 });
 
@@ -34,9 +34,9 @@ const [loginData, setLoginData] = useState({
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="username"
-          value={loginData.username}
-          id="username"
+          name="userName"
+          value={loginData.userName}
+          id="userName"
           onChange={handleChange}
           placeholder="Username"
         />
